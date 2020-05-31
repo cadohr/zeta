@@ -4,9 +4,10 @@ import { signInSuccess, signFailure } from './actions';
 
 export function* signIn() {
   try {
+    console.tron.log('entrou');
     yield put(signInSuccess());
   } catch (err) {
-    console.tron.log(err);
+    console.tron.log('errou');
     yield put(signFailure());
   }
 }

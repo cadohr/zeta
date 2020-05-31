@@ -46,6 +46,7 @@ export default function SignIn() {
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Senha de 4 dígitos"
+            secureTextEntry
             returnKeyType="send"
             onSubmitEditing={handleSubmit}
           />

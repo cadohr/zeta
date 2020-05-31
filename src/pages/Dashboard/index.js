@@ -1,6 +1,11 @@
 import React from 'react';
+import { Image } from 'react-native';
 import Slider from '@react-native-community/slider';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import airplane from '~/assets/images/airplane.png';
+import books from '~/assets/images/books.png';
+import sofa from '~/assets/images/sofa.png';
 
 import {
   Header,
@@ -71,7 +76,13 @@ export default function Dashboard({ navigation }) {
             <Icon name="help-outline" color="#FFB802" size={10} />
           </RetirementTax>
 
-          <RetirementInfo onPress={() => navigation.navigate('Retirement')}>
+          <RetirementInfo
+            onPress={() =>
+              navigation.navigate('Retirement', {
+                name: 'Meu Plano de Aposentadoria',
+              })
+            }
+          >
             <Icon name="keyboard-arrow-down" color="#FFB802" size={20} />
           </RetirementInfo>
         </Retirement>
@@ -79,8 +90,13 @@ export default function Dashboard({ navigation }) {
       <Container>
         <Plans>
           <PlansTitle>Meus planos</PlansTitle>
-          <PlanContainer onPress={() => navigation.navigate('Plan')}>
-            <Icon name="school" color="#FFB802" size={48} />
+          <PlanContainer
+            onPress={() =>
+              navigation.navigate('Plan', { name: 'Projeto Harvard' })
+            }
+          >
+            {/* <Icon name="school" color="#FFB802" size={48} /> */}
+            <Image source={books} />
             <PlanContent>
               <PlanTitle>Projeto Harvard</PlanTitle>
               <PlanDescription>MBA Finanças Comportamentais</PlanDescription>
@@ -94,8 +110,13 @@ export default function Dashboard({ navigation }) {
             <Icon name="keyboard-arrow-right" color="#959595" size={20} />
           </PlanContainer>
 
-          <PlanContainer onPress={() => navigation.navigate('Plan')}>
-            <Icon name="airplanemode-active" color="#FFB802" size={48} />
+          <PlanContainer
+            onPress={() =>
+              navigation.navigate('Plan', { name: 'Viagem dos sonhos' })
+            }
+          >
+            {/* <Icon name="airplanemode-active" color="#FFB802" size={48} /> */}
+            <Image source={airplane} />
             <PlanContent>
               <PlanTitle>Viagem dos sonhos</PlanTitle>
               <PlanDescription>Viagem para Cancún</PlanDescription>
@@ -109,8 +130,13 @@ export default function Dashboard({ navigation }) {
             <Icon name="keyboard-arrow-right" color="#959595" size={20} />
           </PlanContainer>
 
-          <PlanContainer onPress={() => navigation.navigate('Plan')}>
-            <Icon name="mood" color="#FFB802" size={48} />
+          <PlanContainer
+            onPress={() =>
+              navigation.navigate('Plan', { name: 'Trabalho Mode OFF' })
+            }
+          >
+            {/* <Icon name="mood" color="#FFB802" size={48} /> */}
+            <Image source={sofa} />
             <PlanContent>
               <PlanTitle>Trabalho Mode OFF</PlanTitle>
               <PlanDescription>Periodo Sabático aos 45 anos</PlanDescription>
